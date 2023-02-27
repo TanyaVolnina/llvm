@@ -2257,6 +2257,7 @@ def int_aarch64_sve_sqrshl        : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_sqshl         : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_sqshlu        : AdvSIMD_SVE_ShiftByImm_Intrinsic;
 def int_aarch64_sve_sqsub         : AdvSIMD_Pred2VectorArg_Intrinsic;
+def int_aarch64_sve_sqsub_u       : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_sqsubr        : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_srhadd        : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_sri           : AdvSIMD_2VectorArgIndexed_Intrinsic;
@@ -2273,6 +2274,7 @@ def int_aarch64_sve_uqadd         : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_uqrshl        : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_uqshl         : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_uqsub         : AdvSIMD_Pred2VectorArg_Intrinsic;
+def int_aarch64_sve_uqsub_u       : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_uqsubr        : AdvSIMD_Pred2VectorArg_Intrinsic;
 def int_aarch64_sve_urecpe        : AdvSIMD_Merged1VectorArg_Intrinsic;
 def int_aarch64_sve_urhadd        : AdvSIMD_Pred2VectorArg_Intrinsic;
@@ -3016,6 +3018,20 @@ let TargetPrefix = "aarch64" in {
 
   def int_aarch64_sme_bmopa_za32 : SME_OuterProduct_Intrinsic;
   def int_aarch64_sme_bmops_za32 : SME_OuterProduct_Intrinsic;
+
+  //
+  // Multi-vector rounding shift left intrinsics
+  //
+
+  def int_aarch64_sve_srshl_single_x2 : SME2_VG2_Multi_Single_Intrinsic;
+  def int_aarch64_sve_urshl_single_x2 : SME2_VG2_Multi_Single_Intrinsic;
+  def int_aarch64_sve_srshl_single_x4 : SME2_VG4_Multi_Single_Intrinsic;
+  def int_aarch64_sve_urshl_single_x4 : SME2_VG4_Multi_Single_Intrinsic;
+
+  def int_aarch64_sve_srshl_x2 : SME2_VG2_Multi_Multi_Intrinsic;
+  def int_aarch64_sve_urshl_x2 : SME2_VG2_Multi_Multi_Intrinsic;
+  def int_aarch64_sve_srshl_x4 : SME2_VG4_Multi_Multi_Intrinsic;
+  def int_aarch64_sve_urshl_x4 : SME2_VG4_Multi_Multi_Intrinsic;
 
   // Multi-vector saturating rounding shift right intrinsics
 
